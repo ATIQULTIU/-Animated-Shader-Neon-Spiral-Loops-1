@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #001;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#controls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+  background-color: #25902950;
+  transform: translateY(-1px);
+}
+button:active {
+  background-color: #00FFFFCC;
+  transform: scale(0.98);
+}
+.btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 0, 1);
+}
+#fullscreenBtn {
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 760px);
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0 0 5px #000, 0 0 10px #000;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 80px rgba(0, 255, 255, 0.08);
+  z-index: 2;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.15), transparent 40%),
+              radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.12), transparent 35%);
+  pointer-events: none;
+}
+
+.container * {
+  position: relative;
+  z-index: 1;
+}
+
+.hint {
+  margin: 0.5rem 0 1.5rem;
+  color: #b8f1ff;
+  font-size: 0.98rem;
+  opacity: 0.86;
+}
+
+
+/* Phone User */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  .container {
+    font-size: 0.8rem;
+  }
+  .btn {
+    font-size: 0.8rem;
+  }
+  #fullscreenBtn {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+}
